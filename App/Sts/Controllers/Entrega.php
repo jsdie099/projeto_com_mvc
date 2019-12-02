@@ -9,8 +9,6 @@ class Entrega {
         $atualiza = new StsEntrega();
         $atualiza->index();
         $this->Dados['dados']=$atualiza->listar();
-        $carregaView = new ConfigView("Sts/Views/includes/acao_entrega");
-        $carregaView->renderizar();
         $carregaView = new ConfigView("Sts/Views/entrega/entrega",$this->Dados);
         $carregaView->renderizar();
     }
