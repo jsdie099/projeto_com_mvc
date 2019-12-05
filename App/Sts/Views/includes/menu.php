@@ -22,7 +22,7 @@
                             <a href="dados" ><h3>Dados</h3></a>
                         </li>
                         <li>
-                            <a href="historico"><h3>Pedidos</h3></a>
+                            <a href="historico?pagina=1"><h3>Pedidos</h3></a>
                         </li>
                         <li>
                             <a href="sair"><h3>Sair</h3></a>

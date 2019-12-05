@@ -17,7 +17,7 @@
         endforeach;
     endif;
 ?>
-    <script src="js/jquery.js"></script>
+    
     <script src="js/sweetalert2.all.min.js"></script>
 
 

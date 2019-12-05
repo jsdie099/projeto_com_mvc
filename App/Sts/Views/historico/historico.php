@@ -16,8 +16,10 @@
                 <td>
                     <?php
                     $cont=0;
-                    foreach ($this->Dados as $dados):
+                    
+                    foreach ($this->Dados['dados'] as $dados):
                         extract($dados);
+                        
                     ?>
                         <h3><?=$id?></h3>
                     <?php
@@ -29,7 +31,7 @@
                     <?php
                     $cont =0;
 
-                    foreach ($this->Dados as $dados):
+                    foreach ($this->Dados['dados'] as $dados):
                         extract($dados);
                         ?>
                         <h3><?=number_format($preco,"2",",",".")?></h3>
@@ -42,7 +44,7 @@
                     <?php
                     $cont = 0;
                     
-                    foreach ($this->Dados as $dados):
+                    foreach ($this->Dados['dados'] as $dados):
                         extract($dados);
                         
                         switch ($status):
@@ -52,7 +54,7 @@
                             case 1:
                                 if($forma=="retirada")
                                 {
-                                    $status = "Pedido para retirada <a href='retirada'>Acompanhar</a>";
+                                    $status = "Pedido para retirada <a href='retirada?id_pedido=$id'>Acompanhar</a>";
                                 }
                                 else
                                 {
@@ -88,19 +90,62 @@
             </tr>
         </table>
     </div>
+    <?php 
+        $num_total = count($this->Dados['paginacao']);
+        $num_paginas = ceil($num_total/10);
+        if($_GET['pagina']>$num_paginas):
+            $valor = $_GET['pagina']-1;
+        else:
+            $valor=1;
+        endif;
+        
+    ?>
     <nav aria-label="...">
         <ul class="pagination pagination-lg">
-            <li class="page-item">
-                <a class="page-link" href="#">Anterior</a>
-            </li>
-            <li class="page-item"><a class="page-link" href="#">1</a></li>
-            <li class="page-item">
-                <a class="page-link">2</a>
-            </li>
-            <li class="page-item"><a class="page-link" href="#">3</a></li>
-            <li class="page-item">
-                <a class="page-link" href="#">Próximo</a>
-            </li>
+            <?php
+                if($_GET['pagina']==1):
+                ?>
+                    <li class="page-item disabled">
+                        <a class="page-link">Anterior</a>
+                    </li>
+            <?php                
+                else:
+                    $valor = $_GET['pagina']-1;
+            ?>
+                    <li class="page-item">
+                        <a class="page-link" href="historico?pagina=<?=$valor?>">Anterior</a>
+                    </li>
+            <?php 
+                endif;
+                
+                for($i=1;$i<=$num_paginas;$i++):
+                    if($_GET['pagina']==1):
+                        ?>
+                        <li class="page-item <?php if($i==$_GET['pagina']){echo'active';}?>"><a class="page-link" href="historico?pagina=<?=$i?>"><?=$i?></a></li>
+                        <?php
+                    else:
+                        ?>
+                         <li class="page-item <?php if($i==$_GET['pagina']){echo'active';}?>"><a class="page-link" href="historico?pagina=<?=$i?>"><?=$i?></a></li>
+                        <?php
+                    endif;
+                endfor;
+                if($_GET['pagina']<$num_paginas):
+                    $valor=$_GET['pagina']+1;
+                    ?>
+                        <li class="page-item">
+                            <a class="page-link" href="historico?pagina=<?=$valor?>">Próximo</a>
+                        </li>
+                    <?php
+                else:
+                    ?>
+                        <li class="page-item disabled">
+                            <a class="page-link ">Próximo</a>
+                        </li>
+                    <?php
+                endif;
+            ?>
+            
+            
         </ul>
     </nav>
 </div>

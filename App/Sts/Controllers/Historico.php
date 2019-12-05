@@ -13,7 +13,9 @@ class Historico
     public function index()
     {
         $listar = new StsHistorico();
-        $this->Dados=$listar->index();
+        $this->Dados['dados']=$listar->index();
+        $paginacao = new StsHistorico();
+        $this->Dados['paginacao'] = $paginacao->paginacao();
         $carregarView = new ConfigView("Sts/Views/historico/historico",$this->Dados);
         $carregarView->renderizar();
     }
