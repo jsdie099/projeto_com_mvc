@@ -18,7 +18,7 @@
 ?>
 <script src="assets/js/jquery.js"></script>
 <script src="assets/js/sweetalert2.all.min.js"></script>
-<!--<script>
+<script>
             $(document).ready(function () {
                 atualiza();
             });
@@ -26,9 +26,9 @@
                 $.get("core/acao_entrega.php",function (resultado) {
                     $('#notificacao').html(resultado);
                 });
-                setTimeout('atualiza()',500);
+                setTimeout('atualiza()',5000);
             }
-</script>-->
+</script>
 <div id="notificacao" class="text-center">
 </div>
 <div class="wrapper text-center" >

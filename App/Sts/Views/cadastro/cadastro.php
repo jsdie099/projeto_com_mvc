@@ -1,4 +1,12 @@
 ﻿
+    <script src="assets/js/jquery.mask.min.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $('#cpf').mask('000.000.000-00');
+            $('#celular').mask('(00)0 0000-0000');
+            $('#cep').mask('00000-000');
+        })
+    </script>
 <div class="wrapper text-center" style="margin-bottom: 50px;">
 <h1>Cadastro do Cliente</h1>
             <form action="" method="post">

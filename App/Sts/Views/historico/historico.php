@@ -1,9 +1,8 @@
-
 <div class="wrapper text-center" id="table_hist">
     <div class="container">
         <table class="table table-bordered table-responsive" >
             <tr>
-                <td style="width: 20%;">
+                <td >
                     <h3>Identificação</h3>
                 </td>
                 <td>
@@ -17,11 +16,8 @@
                 <td>
                     <?php
                     $cont=0;
-
-
                     foreach ($this->Dados as $dados):
                         extract($dados);
-
                     ?>
                         <h3><?=$id?></h3>
                     <?php
@@ -45,27 +41,44 @@
                 <td>
                     <?php
                     $cont = 0;
+                    
                     foreach ($this->Dados as $dados):
                         extract($dados);
+                        
                         switch ($status):
                             case 0:
                                 $status = "Pedido negado";
                             break;
                             case 1:
-                                $status = "Pedido Pendente <a href='entrega?id_pedido=$id'>Acompanhar</a>";
+                                if($forma=="retirada")
+                                {
+                                    $status = "Pedido para retirada <a href='retirada'>Acompanhar</a>";
+                                }
+                                else
+                                {
+                                    $status = "Pedido Pendente <a href='entrega?id_pedido=$id'>Acompanhar</a>";
+                                }
                                 break;
                             case 2:
-                                $status = "Pedido Aceito <a href='entrega?id_pedido=$id'>Acompanhar</a>";
+                                if($forma=="retirada")
+                                {
+                                    $status = "Pedido para retirada finalizado";
+                                }
+                                else
+                                {
+                                    $status = "Pedido Aceito <a href='entrega?id_pedido=$id'>Acompanhar</a>";
+                                }
+                                
                                 break;
                             case 3:
                                 $status = "Saiu para entrega <a href='entrega?id_pedido=$id'>Acompanhar</a>";
                                 break;
                             case 4:
-                                $status = "<h3>Pedido Finalizado</h3>";
+                                $status = "Pedido Finalizado";
                                 break;
-
                         endswitch;
                         ?>
+                        
                         <h3><?=$status?></h3>
                         <?php
                         $cont++;

@@ -10,7 +10,7 @@
     {
         if($_SESSION['status']==1)
         {
-            if(isset($_SESSION['id_pedido']))
+            if(isset($_SESSION['id_pedido1']))
             {
                 echo "<script>
                             $(document).ready(function sweetalertclick() 
@@ -35,8 +35,8 @@
                         {
                             Swal.fire
                             (
-                                'Seu pedido foi aceito',
-                                'Se mantenha nesta tela para receber as notificações',
+                                'Seu pedido foi aprovado',
+                                'Você já pode se direcionar ao estabelecimento',
                                 'success'
                             )
                         } );
@@ -44,41 +44,7 @@
                 unset($_SESSION['id_pedido2']);
             }
         }
-        if($_SESSION['status']==3)
-        {
-            if(isset($_SESSION['id_pedido3']))
-            {
-                 echo "<script> 
-                            $(document).ready(function sweetalertclick() 
-                            {
-                                Swal.fire
-                                (
-                                    'Seu pedido saiu para entrega',
-                                    'Em breve o entregador chegará a sua localização'
-                                )
-                            } );
-                    </script>";
-                    unset($_SESSION['id_pedido3']);
-            }
-        }
-        if($_SESSION['status']==4)
-        {
-            if(isset($_SESSION['id_pedido']))
-            {
-                echo "<script> 
-                           $(document).ready(function sweetalertclick() 
-                            {
-                                Swal.fire
-                                (
-                                    'Seu pedido chegou =)',
-                                    'Desejamos boa apetite',
-                                    'success'
-                                )
-                            } );
-                    </script>";
-                unset($_SESSION['id_pedido']);
-            }
-        }
+        
         if($_SESSION['status']==0)
         {
             if(isset($_SESSION['id_pedido']))

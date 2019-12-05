@@ -9,11 +9,14 @@ use Sts\Models\StsRetirada;
 
 class Retirada
 {
+    private $Dados;
     public function index()
     {
-        $carregarView = new ConfigView("Sts/Views/retirada/retirada");
-        $carregarView->renderizar();
         $update = new StsRetirada();
         $update->index();
+        $this->Dados = $update->listar();
+        $carregarView = new ConfigView("Sts/Views/retirada/retirada",$this->Dados);
+        $carregarView->renderizar();
+        
     }
 }
