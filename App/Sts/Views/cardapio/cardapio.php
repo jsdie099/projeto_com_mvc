@@ -1,4 +1,4 @@
-<div class="wrapper text-center">
+<div class="wrapper text-center" id="cardapio">
     <div class="container" style="margin-bottom: 50px;">
         <table class="table table-responsive">
             <tr>

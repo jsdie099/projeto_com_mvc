@@ -3,7 +3,7 @@
         extract($dados);
         ?>
         <div class="wrapper text-center" style="margin-bottom: 50px;">
-            <h1>Cadastro do Cliente</h1>
+            <h2>Alteração dos dados</h2>
             <form action="" method="post">
                 <div class="bloco">
                     <div id="esquerda">
@@ -11,7 +11,7 @@
                             <input type="text" name="nome" required value="<?=$nome?>"></label><br>
                         <label>CPF:<br>
                             <input type="text" name="cpf" id="cpf" required value="<?=$cpf?>"></label><br>
-                        <label>Número do Celular:(sem espaço)<br>
+                        <label>Número do Celular:<br>
                             <input type="text" name="celular" id="celular" required value="<?=$celular?>" ></label><br>
                         <label>E-mail:<br>
                             <input type="email" name="email" required value="<?=$email?>"></label><br>
@@ -24,7 +24,7 @@
                         <label>Bairro:<br>
                             <input type="text" name="bairro" required value="<?=$bairro?>"></label><br>
 
-                        <label>Complemento (opcional):<br>
+                        <label>Complemento<br>
                             <input type="text" name="complemento" value="<?=$complemento?>"></label><br>
                         <label>Cidade:<br>
                             <input type="text" name="cidade" required value="<?=$cidade?>"></label><br>

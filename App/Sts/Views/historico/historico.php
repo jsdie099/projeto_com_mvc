@@ -1,9 +1,9 @@
 
-<div class="wrapper text-center">
+<div class="wrapper text-center" id="table_hist">
     <div class="container">
         <table class="table table-bordered table-responsive" >
             <tr>
-                <td style="width: 33%;">
+                <td style="width: 20%;">
                     <h3>Identificação</h3>
                 </td>
                 <td>

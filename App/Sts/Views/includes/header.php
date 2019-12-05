@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="assets/css/personalizado.css">
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/sweetalert2.css">
+    <script src="assets/js/jquery.js"></script>
     
     <style>
         body
