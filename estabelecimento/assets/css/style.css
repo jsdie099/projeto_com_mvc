@@ -39,7 +39,7 @@ h1,h2,h3,h4,h5
 }
 .wrapper input[type=submit]
 {
-    margin-top: 20px;
+    margin-top: 50px;
     border-radius: 5px;
     padding: 10px 20px;
     font-size: 25px;
@@ -67,7 +67,10 @@ select
 }
 
 @media screen and (max-width: 768px){
-   
+    .wrapper input[type=submit]
+    {
+        margin-top: 50px;
+    }
 
 }
 @media screen and (max-width: 425px)
@@ -75,6 +78,10 @@ select
     h3
     {
         font-size: 20px;
+    }
+    .wrapper input[type=submit]
+    {
+        margin-top: 40px;
     }
   
 }
@@ -112,6 +119,10 @@ select
         padding: 4px 25px;
         font-size: 13px;
     }
+    .wrapper input[type=submit]
+    {
+        margin-top: 30px;
+    }
 }
 @media screen and (max-width: 320px)
 {
@@ -142,5 +153,6 @@ select
     .wrapper input[type=submit]
     {
         font-size:15px;
+        margin-top: 30px;
     }
 }

@@ -7,9 +7,14 @@ use Sts\Models\StsHome;
 
 class Home
 {
-    public function index()
+        public function index()
     {
-        $carregaView = new ConfigView("Sts/Views/home/home");
-        $carregaView->renderizar();
-    }
+        $carregarView = new ConfigView("Sts/Views/home/home");
+        $carregarView->renderizar();
+        if(isset($_POST) and !empty($_POST))
+        {
+            $login = new StsHome();
+            $login->index();
+        }
+    }   
 }
