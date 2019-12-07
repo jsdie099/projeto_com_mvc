@@ -2,7 +2,7 @@
     unset($_SESSION['endereco']);
     if(!$this->Dados):
         $_SESSION['id_pedido']=$_GET['id_pedido'];
-        $_SESSION['id_pedido']=$_GET['id_pedido'];
+        $_SESSION['id_pedido1']=$_GET['id_pedido'];
         $_SESSION['id_pedido2']=$_GET['id_pedido'];
         $_SESSION['id_pedido3']=$_GET['id_pedido'];
     else:
