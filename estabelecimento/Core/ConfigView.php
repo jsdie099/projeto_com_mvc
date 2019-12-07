@@ -15,7 +15,7 @@ class ConfigView
 
     public function renderizar()
     {
-        if($this->nome=="Sts/Views/home/home" || $this->nome=="Sts/Views/login/login" || $this->nome=="Sts/Views/cadastro/cadastro")
+        if($this->nome=="Sts/Views/home/home")
         {
             include 'App/Sts/Views/includes/header.php';
             include 'App/Sts/Views/includes/menu_inicial.php';

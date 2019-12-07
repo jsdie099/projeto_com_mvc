@@ -55,49 +55,19 @@ h1,h2,h3,h4,h5
 {
     background-color: orange;
 }
-
-.bloco
+select
 {
-    width: 100%;
-    float: left;
+    margin-bottom: 0;
+    border-radius: 4px;
+    padding: 0 10px 15px 20px;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    -ms-border-radius: 4px;
+    -o-border-radius: 4px;
 }
 
-#esquerda
-{
-    float: left;
-    width: 50%;
-}
-#direita
-{
-    float: right;
-    width: 50%;
-}
-
-#palco
-{
-    color: white;
-}
-#cartao
-{
-    margin-right: 40%;
-}
-#dinheiro
-{
-    margin-left: 40%;
-}
-#texto_cliente
-{
-    margin-top: 100px;
-}
 @media screen and (max-width: 768px){
-    #dinheiro
-    {
-        margin-left: 0;
-    }
-    #cartao
-    {
-        margin-right: 0;
-    }
+   
 
 }
 @media screen and (max-width: 425px)
@@ -106,30 +76,7 @@ h1,h2,h3,h4,h5
     {
         font-size: 20px;
     }
-    .bloco{
-        margin-left: 20%;
-    }
-    #esquerda
-    {
-        float: none;
-    }
-    #direita
-    {
-        float: none;
-    }
-    #dinheiro
-    {
-        margin: 0;
-        padding: 0;
-    }
-    h3
-    {
-        font-size: 10px;
-    }
-    #texto_cliente
-    {
-        font-size: 20px;
-    }
+  
 }
 @media screen and (max-width: 375px)
 {
@@ -168,17 +115,24 @@ h1,h2,h3,h4,h5
 }
 @media screen and (max-width: 320px)
 {
-    .bloco{
-        margin-left: 10%;
-    }
+    
     h3
     {
-        font-size: 15px;
+        font-size: 20px;
+    }
+    select
+    {
+        padding:0 1px 10px 10;
+        font-size:15px;
+    }
+    .wrapper input[type=text]
+    {
+        padding: 3px 10px 2px 2px;
     }
     .wrapper input
     {
         border-radius: 10px;
-        padding: 1px 10px;
+        padding: 1px 6px;
         font-size: 13px;
         -webkit-border-radius: 10px;
         -moz-border-radius: 10px;
