@@ -14,7 +14,8 @@ class Retirada
     {
         $update = new StsRetirada();
         $update->index();
-        $this->Dados = $update->listar();
+        $listar = new StsRetirada();
+        $this->Dados = $listar->listar();
         $carregarView = new ConfigView("Sts/Views/retirada/retirada",$this->Dados);
         $carregarView->renderizar();
         

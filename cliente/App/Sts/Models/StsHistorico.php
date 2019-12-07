@@ -16,7 +16,7 @@ class StsHistorico
         {
             $_GET['pagina'] = 1;
         }
-        $pagina = $_GET['pagina'];
+        $pagina = (int)$_GET['pagina'];
         $inicio = ($itens_por_pagina*$pagina)-$itens_por_pagina;
         $listar = new StsRead();
         $listar->exeRead("pedido","WHERE id_cliente=:id order by id desc limit {$inicio},{$itens_por_pagina}",

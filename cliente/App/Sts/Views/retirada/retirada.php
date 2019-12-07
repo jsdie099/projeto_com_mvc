@@ -1,5 +1,4 @@
 <?php
-    
     unset($_SESSION['endereco']);
     if(!$this->Dados):
         $_SESSION['id_pedido']=$_GET['id_pedido'];
@@ -9,6 +8,7 @@
     else:
         foreach($this->Dados as $dados): 
             extract($dados);
+            $_SESSION['pedido'] = $id;
             $_SESSION['id_pedido'] = $id;
             $_SESSION['id_pedido1'] = $id;
             $_SESSION['id_pedido2'] = $id;
@@ -18,7 +18,7 @@
     endif;
 ?>
     
-    <script src="js/sweetalert2.all.min.js"></script>
+    
 
 
     <script>
