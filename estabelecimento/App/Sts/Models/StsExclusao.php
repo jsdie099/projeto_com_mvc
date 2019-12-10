@@ -7,7 +7,7 @@ class StsExclusao
     {
         $id = (int)$_GET['id'];
         $exclusao = new StsRead();
-        $exclusao->fullRead("delete from pedido where id=:id","id={$id}");
+        $exclusao->fullRead("update pedido set status=0 where id=:id","id={$id}");
     }
 }
 

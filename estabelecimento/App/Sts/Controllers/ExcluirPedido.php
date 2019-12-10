@@ -8,6 +8,7 @@ class ExcluirPedido
     {
         $excluir = new StsExclusao();
         $excluir->index();
+        $_SESSION['status']=0;
         header('location:pedidos');
     }
 }

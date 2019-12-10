@@ -39,6 +39,7 @@ class StsCardapio
                 "id_cliente={$_SESSION['logado']}&tipo={$numAlimento}&preco={$dadosPedido->getPrecoTotal()}&quantidade={$qtdAlimento}");
             $addPedido->fullRead("select * from pedido where id=(select max(id) from pedido p)");
             $_SESSION['pedido'] = $addPedido->getResultado();
+            $_SESSION['pedidos'][]= $addPedido->getResultado();
             header('location:pedido');
 
         }

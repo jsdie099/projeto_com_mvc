@@ -1,8 +1,18 @@
+<script>
+    $(document).ready(function(){
+        if($("#teste").length)
+        {
+            $("#nenhum").css('display','none');
+            $("#nenhum").hide();
+        }
+        else
+        {
+            $("#nenhum").fadeIn(2000).delay(2000);
+            $("#nenhum").fadeOut(2000);
+        }
+    });
+</script>
 <?php
-    if(!isset($_SESSION))
-    {
-        session_start();
-    }
     $db = new mysqli('localhost','root','','fast_food2');
     $sql = "select * from pedido where status=1 order by id";
     $exec = $db->query($sql);
@@ -12,7 +22,9 @@
         while($dados = $exec->fetch_object())
         {
             ?>
-            <div class="container text-center">
+            
+            <div class="container text-center" id="teste">
+                
                 <div class="row"style="margin-bottom:20px;">
                     <div class="col-md-4"></div>
                     <div class="col-md-4">
@@ -27,7 +39,7 @@
                     <div class="col-md-4"></div>
                     <div class="col-md-4">
                         <h3>Escolher:</h3>
-                        <a href="NotificacaoEntregador" >
+                        <a href="notificacao?id=<?=$dados->id?>">
                             <img src="assets/imagens/teste.png" alt="" title="Aceitar" style="width:40px; height:40px;">
                         </a>
                         <a href="excluirpedido?id=<?=$dados->id?>">

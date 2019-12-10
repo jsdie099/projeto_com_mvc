@@ -13,6 +13,7 @@
                 setTimeout('atualiza()',5000);
             }
         </script>
+        <h1 id="nenhum" style="display: none;">Nenhum pedido no momento!</h1>
     <h1 id="notificacao">
         <?php
             require_once "Core/acao_funcionario.php";
