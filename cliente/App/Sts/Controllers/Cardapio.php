@@ -23,8 +23,7 @@ class Cardapio
             if(isset($_POST) and !empty($_POST))
             {
                 $addPedido = new StsCardapio();
-                $addPedido->inserirPedido();
-
+                $addPedido->inserirPedido();        
             }
         }
         else

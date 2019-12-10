@@ -49,9 +49,20 @@
 
     <form method="post">
         <label for="numalimento">Digite o número do alimento que você deseja:<br><br>
-            <input type="number" name="numalimento" required placeholder="Número do alimento"></label><br><br>
+            <input type="number" name="numalimento"  required placeholder="Número do alimento"></label><br><br>
         <label for="qtdalimento">Digite a quantidade desejada (máx. 30):<br><br>
-            <input type="number" name="qtdalimento" min="1" required placeholder="Quantidade do alimento"></label><br><br>
-        <input type="submit" value="Enviar">
+            <input type="number" name="qtdalimento" id="quantidade" min="1"required placeholder="Quantidade do alimento"></label><br><br>
+        <input type="submit" value="Enviar" onclick="validar()">
     </form>
 </div>
+<script>
+    qtd = document.getElementById("quantidade");
+    function validar()
+    {
+        if(Number(qtd.value)>30)
+        {
+            alert("Digite uma quantidade válida!");
+            event.preventDefault();
+        }
+    }
+</script>
