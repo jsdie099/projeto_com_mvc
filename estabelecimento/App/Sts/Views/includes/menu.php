@@ -9,7 +9,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="cardapio"><img src="assets/imagens/logo.jpg" style="height: 60px; width: 60px; margin-left: 50px;" alt="" title="Super Rango"></a>
+                <a class="navbar-brand" href="pedidos"><img src="assets/imagens/logo.jpg" style="height: 60px; width: 60px; margin-left: 50px;" alt="" title="Super Rango"></a>
             </div>
 
             <div class="container">
