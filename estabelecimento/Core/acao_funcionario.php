@@ -14,6 +14,7 @@
 </script>
 <?php
     $db = new mysqli('localhost','root','','fast_food2');
+    $db->set_charset('utf8');
     $sql = "select * from pedido where status=1 order by id";
     $exec = $db->query($sql);
     $rows = $exec->num_rows;

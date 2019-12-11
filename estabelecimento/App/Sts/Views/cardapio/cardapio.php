@@ -1,10 +1,11 @@
 <div class="wrapper text-center" id="cardapio">
     <div class="container" style="margin-bottom: 50px;">
-        <table class="table table-responsive">
+        <table class="table table-bordered table-responsive">
             <tr>
-                <td><h3>N°</h3></td>
-                <td><h3>Descrição</h3></td>
+                <td><h3>Identificação</h3></td>
                 <td><h3>Preço</h3></td>
+                <td><h3>Opções</h3></td>
+                
             </tr>
             <tr>
                 <td>
@@ -13,7 +14,7 @@
                     foreach ($this->Dados as $dados):
                         extract($dados);
                         ?>
-                        <h3><?=$id?> - </h3>
+                        <h3><?=$id?> - <?=$descricao?></h3>
                         <?php
                         $cont++;
                     endforeach;
@@ -21,37 +22,30 @@
                 </td>
                 <td>
                     <?php
-                    $cont = 0;
-                    foreach ($this->Dados as $dados):
-                        extract($dados);
-                        ?>
-                        <h3><?=$descricao?></h3>
-                        <?php
-                        $cont++;
-                    endforeach;
+                        $cont = 0;
+                        foreach ($this->Dados as $dados):
+                            extract($dados);
+                            ?>
+                            <h3>R$<?=number_format($preco,"2",',','.')?></h3>
+                            <?php
+                            $cont++;
+                        endforeach;
                     ?>
                 </td>
                 <td>
-                    <?php
-                    $cont = 0;
-                    foreach ($this->Dados as $dados):
-                        extract($dados);
-                        ?>
-                        <h3>R$<?=number_format($preco,"2",',','.')?></h3>
-                        <?php
-                        $cont++;
-                    endforeach;
+                <?php
+                        $cont = 0;
+                        foreach ($this->Dados as $dados):
+                            extract($dados);
+                            ?>
+                            <h3><a href="editar">Editar</a></h3>
+                            <?php
+                            $cont++;
+                        endforeach;
                     ?>
+                    
                 </td>
             </tr>
         </table>
     </div>
-
-    <form method="post">
-        <label for="numalimento">Digite o número do alimento que você deseja:<br><br>
-            <input type="number" name="numalimento" required placeholder="Número do alimento"></label><br><br>
-        <label for="qtdalimento">Digite a quantidade desejada (máx. 30):<br><br>
-            <input type="number" name="qtdalimento" min="1" required placeholder="Quantidade do alimento"></label><br><br>
-        <input type="submit" value="Enviar">
-    </form>
 </div>

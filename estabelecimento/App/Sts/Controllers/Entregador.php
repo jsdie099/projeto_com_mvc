@@ -2,18 +2,18 @@
 namespace Sts\Controllers;
 use Core\ConfigView;
 
-class Pedidos
+class Entregador
 {
     public function index()
-    {       
+    {
         if(isset($_SESSION['logado_f']))
         {
-            $carregarView = new ConfigView("Sts/Views/pedidos/pedidos");
-            $carregarView->renderizar();
+            $carregaView = new ConfigView("Sts/Views/entregador/entregador");
+            $carregaView->renderizar();
         }
         else
         {
-            $carregaView = new ConfigView("Sts/Views/erro/erro");
+            $carregaView = new ConfigView("Sts/Views/home/home");
             $carregaView->renderizar();
         }
         

@@ -15,7 +15,7 @@ class ConfigView
 
     public function renderizar()
     {
-        if($this->nome=="Sts/Views/home/home")
+        if($this->nome=="Sts/Views/home/home" || $this->nome=="Sts/Views/entregador/entregador" || $this->nome=="Sts/Views/finalizacao/finalizacao" || $this->nome=="Sts/Views/erro/erro")
         {
             include 'App/Sts/Views/includes/header.php';
             include 'App/Sts/Views/includes/menu_inicial.php';
@@ -35,7 +35,7 @@ class ConfigView
             else
             {
                 include 'App/Sts/Views/includes/header.php';
-                include 'App/Sts/Views/includes/menu.php';
+                include 'App/Sts/Views/includes/menu_inicial.php';
                 include "App/Sts/Views/erro/erro.php";
                 include 'App/Sts/Views/includes/footer.php';
 

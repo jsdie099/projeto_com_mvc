@@ -1,69 +1,77 @@
-
-<script src="assets/js/sweetalert2.all.js"></script>
-
+<script>
+    $(document).ready(function(){
+        if($("#teste").length)
+        {
+            $("#nenhum").css('display','none');
+            $("#nenhum").hide();
+        }
+        else
+        {
+            $("#nenhum").fadeIn(2000).delay(2000);
+            $("#nenhum").fadeOut(2000);
+        }
+        $("#btn").click(function(){
+            window.location.href="finalizar";
+        })
+    });
+    
+    
+</script>
 <?php
-    if(!isset($_SESSION))
+    $db = new mysqli('localhost','root','','fast_food2');
+    $db->set_charset('utf8');
+    
+
+    $sql = "select * from pedido where status between 2 and 3 order by id";
+    $exec = $db->query($sql);
+    $rows = $exec->num_rows;
+    if($rows>0)
     {
-        session_start();
+        while($dados = $exec->fetch_object())
+        {
+            $dados_user = "select * from usuario where id={$dados->id_cliente}";
+            $results = $db->query($dados_user);
+            $result_dados = $results->num_rows;
+            if($result_dados>0)
+            {
+                while($dados_user = $results->fetch_object())
+                {
+                    $nome = explode(" ",$dados_user->nome);
+            ?>
+            
+            <div class="container text-center" id="teste">
+                
+                <div class="row"style="margin-bottom:120px;">
+                    
+                    <div class="col-md-4">
+                    <h3>
+                        Pedido N° <?=$dados->id?> <br>(<?=$nome[0]?>, Endereco: <?=$dados_user->rua?> - 
+                        <?=$dados_user->numero?>, <br><?=$dados_user->bairro?>, preço: R$<?=number_format($dados->preco,2,',','.')?>)
+                    </h3>
+                    </div>
+                    
+                    <div class="col-md-3"></div>  
+                    <div class="col-md-3">
+                        <h3>Escolher:</h3>
+                        <form method="post">
+                            <select name="status">
+                                <option value="0"></option>
+                                <option value="1">Saiu para entrega</option>
+                                <option value="1">Chegou ao destino</option>
+                            </select>
+                        </form>
+                    </div>
+                    <div class="col-md-2">
+                            <input type="submit" value="Enviar" id="btn">
+                    </div>
+                </div>
+                
+            </div>
+            
+        <?php  
+         
+                }
+            } 
+        }
     }
-   
-        if($_SESSION['status']==1)
-        {
-            if(isset($_SESSION['id_pedido1']))
-            {
-                echo "<script>
-                            $(document).ready(function sweetalertclick() 
-                            {
-                                Swal.fire
-                                (
-                                    'Seu pedido ainda aguarda aprovação',
-                                    'Se mantenha nesta tela para receber as notificações',
-                                    ''
-                                )
-                           } );
-                    </script>";
-                unset($_SESSION['id_pedido1']);
-            }
-        }
-        if($_SESSION['status']==2)
-        {
-            if(isset($_SESSION['id_pedido2']))
-            {
-                echo "<script> 
-                        $(document).ready(function sweetalertclick() 
-                        {
-                            Swal.fire
-                            (
-                                'Seu pedido foi aprovado',
-                                'Você já pode se direcionar ao estabelecimento',
-                                'success'
-                            )
-                        } );
-                        </script>";
-                unset($_SESSION['id_pedido2']);
-            }
-        }
-        
-        if($_SESSION['status']==0)
-        {
-            if(isset($_SESSION['id_pedido']))
-            {
-                echo "<script> 
-                        $(document).ready(function sweetalertclick() 
-                         {
-                            Swal.fire(
-                                'Seu pedido foi negado =(',
-                                'Clique em ok para ser redirecionado ao cardápio novamente',
-                                'error'
-                            )
-                        } );
-                        window.onclick = function() 
-                        {
-                            window.location.href='cardapio';
-                        }
-                    </script>";
-                unset($_SESSION['id_pedido']);
-            }
-        }
-    
-    
+    ?>

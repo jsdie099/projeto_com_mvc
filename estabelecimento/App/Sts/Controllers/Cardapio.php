@@ -13,7 +13,7 @@ class Cardapio
 
     public function index()
     {
-        if(isset($_SESSION['logado']))
+        if(isset($_SESSION['logado_f']))
         {
             $listar = new StsCardapio();
             $this->Dados=$listar->index();

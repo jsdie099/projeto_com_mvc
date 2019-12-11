@@ -59,28 +59,15 @@
                                         $status = "Pedido negado";
                                     break;
                                     case 1:
-                                        if($forma=="retirada")
-                                        {
-                                            $status = "Pedido para retirada <a href='retirada?id_pedido=$id'>Acompanhar</a>";
-                                        }
-                                        else
-                                        {
-                                            $status = "Pedido Pendente <a href='entrega?id_pedido=$id'>Acompanhar</a>";
-                                        }
+                                         $status = "Pedido em aberto";
                                         break;
                                     case 2:
-                                        if($forma=="retirada")
-                                        {
-                                            $status = "Pedido para retirada finalizado";
-                                        }
-                                        else
-                                        {
-                                            $status = "Pedido Aceito <a href='entrega?id_pedido=$id'>Acompanhar</a>";
-                                        }
+                                        
+                                        $status = "Pedido em andamento";
                                         
                                         break;
                                     case 3:
-                                        $status = "Saiu para entrega <a href='entrega?id_pedido=$id'>Acompanhar</a>";
+                                        $status = "Pedido em andamento";
                                         break;
                                     case 4:
                                         $status = "Pedido Finalizado";
