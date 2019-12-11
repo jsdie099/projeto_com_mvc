@@ -6,8 +6,17 @@ class Finalizar
 {
     public function index()
     {
-        $carregarView = new ConfigView("Sts/Views/finalizacao/finalizacao");
-        $carregarView->renderizar();
+        if(isset($_SESSION['logado_f']))
+        {
+            $carregarView = new ConfigView("Sts/Views/finalizacao/finalizacao");
+            $carregarView->renderizar();
+        }
+        else
+        {
+            $erro = new Erro();
+            $erro->index();
+        }
+        
     }
 }
 

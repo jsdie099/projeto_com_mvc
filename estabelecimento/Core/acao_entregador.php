@@ -10,9 +10,23 @@
             $("#nenhum").fadeIn(2000).delay(2000);
             $("#nenhum").fadeOut(2000);
         }
-        $("#btn").click(function(){
-            window.location.href="finalizar";
-        })
+        var selecionados;
+        $('[name="status"]').on('change', function() {
+            selecionados = $('[name="status"] :selected')
+                            .map(function(){
+                                    if($(this).val() != '')
+                                    return $(this).text();
+                                }).get();
+            console.log(selecionados);
+        });
+        
+        $("#btn").on('click', function(){
+            if(selecionados == null)
+                alert("Selecione alguma das opções");
+            else{
+                window.location.href="finalizar";
+            }
+        });
     });
     
     
@@ -54,7 +68,7 @@
                     <div class="col-md-3">
                         <h3>Escolher:</h3>
                         <form method="post">
-                            <select name="status">
+                            <select name="status" id="status">
                                 <option value="0"></option>
                                 <option value="1">Saiu para entrega</option>
                                 <option value="1">Chegou ao destino</option>

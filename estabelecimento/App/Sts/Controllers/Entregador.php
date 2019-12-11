@@ -13,10 +13,9 @@ class Entregador
         }
         else
         {
-            $carregaView = new ConfigView("Sts/Views/home/home");
-            $carregaView->renderizar();
+            $erro = new Erro();
+            $erro->index();
         }
-        
     }
 }
 

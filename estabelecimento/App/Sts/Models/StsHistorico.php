@@ -19,8 +19,8 @@ class StsHistorico
         $pagina = (int)$_GET['pagina'];
         $inicio = ($itens_por_pagina*$pagina)-$itens_por_pagina;
         $listar = new StsRead();
-        $listar->exeRead("pedido","WHERE id_cliente=:id order by id desc limit {$inicio},{$itens_por_pagina}",
-        "id={$_SESSION['logado']}");
+        $listar->exeRead("pedido","order by id desc limit {$inicio},{$itens_por_pagina}"
+        );
         $this->resultado['dados'] = $listar->getResultado();
         return $this->resultado['dados'];
         
@@ -28,7 +28,7 @@ class StsHistorico
     public function paginacao()
     {
         $listar = new StsRead();
-        $listar->exeRead("pedido","WHERE id_cliente=:id order by id desc","id={$_SESSION['logado']}");
+        $listar->exeRead("pedido","order by id desc");
         $this->resultado['paginacao'] = $listar->getResultado();
         return $this->resultado['paginacao'];
     }

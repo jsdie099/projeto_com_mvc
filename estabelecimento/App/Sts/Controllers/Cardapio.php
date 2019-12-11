@@ -29,8 +29,8 @@ class Cardapio
         }
         else
         {
-            $sair = new Sair();
-            $sair->index();
+            $erro = new Erro();
+            $erro->index();
         }
 
     }

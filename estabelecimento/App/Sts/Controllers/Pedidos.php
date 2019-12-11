@@ -13,8 +13,8 @@ class Pedidos
         }
         else
         {
-            $carregaView = new ConfigView("Sts/Views/erro/erro");
-            $carregaView->renderizar();
+            $erro = new Erro();
+            $erro->index();
         }
         
     }
