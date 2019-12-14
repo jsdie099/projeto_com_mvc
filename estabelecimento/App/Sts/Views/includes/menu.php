@@ -19,7 +19,7 @@
                             <a href="cardapio"><h3>Cardapio</h3></a>
                         </li>
                         <li>
-                            <a href="dados" ><h3>Dados</h3></a>
+                            <a href="Adicionar" ><h3>Adicionar Alimentos</h3></a>
                         </li>
                         <li>
                             <a href="historico?pagina=1"><h3>Pedidos</h3></a>

@@ -38,7 +38,7 @@
                         foreach ($this->Dados as $dados):
                             extract($dados);
                             ?>
-                            <h3><a href="editar">Editar</a></h3>
+                            <h3><a href="editar?id=<?=$id?>">Editar</a></h3>
                             <?php
                             $cont++;
                         endforeach;

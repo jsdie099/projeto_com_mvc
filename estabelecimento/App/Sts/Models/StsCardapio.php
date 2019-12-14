@@ -9,11 +9,18 @@ use Sts\Models\Helper\StsRead;
 class StsCardapio
 {
     private $dados;
-    private $dadosPedido;
     public function index()
     {
         $listar = new StsRead();
         $listar->exeRead("alimento");
+        $this->dados=$listar->getResultado();
+        return $this->dados;
+    }
+    public function find(int $id=null)
+    {
+        $id = $_GET['id'];
+        $listar = new StsRead();
+        $listar->exeRead("alimento","where id=:id","id={$id}");
         $this->dados=$listar->getResultado();
         return $this->dados;
     }
@@ -47,5 +54,13 @@ class StsCardapio
             echo "<h2 style='color: white' align='center'>Alimento inválido!</h2>";
         }
 
+    }
+    public function editarAlimento(int $id)
+    {
+        $descricao = (string)$_POST['descricao'];
+        $preco = (double)$_POST['preco'];
+        $update = new StsRead();
+        $update->fullRead("update alimento set descricao=:descricao, preco=:preco where id=:id",
+        "descricao={$descricao}&preco={$preco}&id={$id}");
     }
 }

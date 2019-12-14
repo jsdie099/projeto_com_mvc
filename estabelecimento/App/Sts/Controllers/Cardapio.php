@@ -24,7 +24,6 @@ class Cardapio
             {
                 $addPedido = new StsCardapio();
                 $addPedido->inserirPedido();
-
             }
         }
         else
