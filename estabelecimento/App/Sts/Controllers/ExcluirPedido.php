@@ -1,13 +1,13 @@
 <?php
 namespace Sts\Controllers;
-use Sts\Models\StsExclusao;
+use Sts\Models\StsAttStatus;
 
 class ExcluirPedido
 {
     public function index()
     {
-        $excluir = new StsExclusao();
-        $excluir->index();
+        $excluir = new StsAttStatus();
+        $excluir->index(0);
         $_SESSION['status']=0;
         header('location:pedidos');
     }

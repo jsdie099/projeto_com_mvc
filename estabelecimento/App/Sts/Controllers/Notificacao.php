@@ -2,7 +2,7 @@
 namespace Sts\Controllers;
 
 use Core\ConfigView;
-use Sts\Models\StsAttAceita;
+use Sts\Models\StsAttStatus;
 
 class Notificacao
 {
@@ -10,8 +10,8 @@ class Notificacao
     {
         if(isset($_SESSION['logado_f']))
         {
-            $att_pedido = new StsAttAceita();
-            $att_pedido->index();
+            $att_pedido = new StsAttStatus();
+            $att_pedido->index(2);
             $carregarView = new ConfigView("Sts/Views/notificacao/notificacao");
             $carregarView->renderizar();
         }

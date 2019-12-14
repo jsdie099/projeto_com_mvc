@@ -6,13 +6,13 @@ namespace Sts\Models;
 
 use Sts\Models\Helper\StsRead;
 
-class StsAttAceita
+class StsAttStatus
 {
-    public function index()
+    public function index(int $valor)
     {
         $id = (int)$_GET['id'];
         $update = new StsRead();
-        $update->fullRead("update pedido set status='2' where id=:id","id={$id}");
+        $update->fullRead("update pedido set status=:status where id=:id","id={$id}&status={$valor}");
         $_SESSION['status']=2;
     }
 }
