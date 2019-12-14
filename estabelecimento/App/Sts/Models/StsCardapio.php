@@ -63,4 +63,12 @@ class StsCardapio
         $update->fullRead("update alimento set descricao=:descricao, preco=:preco where id=:id",
         "descricao={$descricao}&preco={$preco}&id={$id}");
     }
+    public function inserirAlimento()
+    {
+        $descricao = (string)$_POST['descricao'];
+        $preco = (double)$_POST['preco'];
+        $inserir = new StsRead();
+        $inserir->fullRead("insert into alimento(id,descricao,preco) values((select max(id)+1 from alimento ali),:descricao,:preco)",
+        "descricao={$descricao}&preco={$preco}");
+    }
 }
