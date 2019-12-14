@@ -23,9 +23,6 @@
         $("#btn").on('click', function(){
             if(selecionados == null)
                 alert("Selecione alguma das opções");
-            else{
-                window.location.href="finalizar";
-            }
         });
     });
     
@@ -63,23 +60,24 @@
                         <?=$dados_user->numero?>, <br><?=$dados_user->bairro?>, preço: R$<?=number_format($dados->preco,2,',','.')?>)
                     </h3>
                     </div>
-                    
+                    <form method="post" action="finalizar?id=<?=$dados->id?>">
                     <div class="col-md-3"></div>  
                     <div class="col-md-3">
                         <h3>Escolher:</h3>
-                        <form method="post">
+                        
                             <select name="status" id="status">
                                 <option value="0"></option>
                                 <option value="1">Saiu para entrega</option>
-                                <option value="1">Chegou ao destino</option>
+                                <option value="2">Chegou ao destino</option>
                             </select>
-                        </form>
+                        
                     </div>
                     <div class="col-md-2">
                             <input type="submit" value="Enviar" id="btn">
+                            
                     </div>
                 </div>
-                
+                </form>
             </div>
             
         <?php  

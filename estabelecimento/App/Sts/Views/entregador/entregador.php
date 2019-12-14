@@ -10,7 +10,7 @@
                     $.get("Core/acao_entregador.php",function (resultado) {
                     $('#notificacao').html(resultado);
                 });
-                setTimeout('atualiza()',5000);
+                setTimeout('atualiza()',10000);
             }
         </script>
         <h1 id="nenhum" style="display: none;">Nenhum pedido no momento!</h1>
