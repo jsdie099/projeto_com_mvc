@@ -65,7 +65,7 @@
                                         }
                                         else
                                         {
-                                            $status = "Pedido Pendente <a href='entrega?id_pedido=$id'>Acompanhar</a>";
+                                            $status = "Pendente <a href='entrega?id_pedido=$id'>Acompanhar</a> <a href='cancelar?id_pedido=$id' style='color:white;'>Cancelar</a>";
                                         }
                                         break;
                                     case 2:
