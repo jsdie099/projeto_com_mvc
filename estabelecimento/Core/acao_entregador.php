@@ -23,6 +23,7 @@
         $("#btn").on('click', function(){
             if(selecionados == null)
                 alert("Selecione alguma das opções");
+                event.preventDefault();
         });
     });
     
