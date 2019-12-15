@@ -1,10 +1,11 @@
 <?php
     unset($_SESSION['endereco']);
     if(!$this->Dados):
-        $_SESSION['id_pedido']=$_GET['id_pedido'];
-        $_SESSION['id_pedido1']=$_GET['id_pedido'];
-        $_SESSION['id_pedido2']=$_GET['id_pedido'];
-        $_SESSION['id_pedido3']=$_GET['id_pedido'];
+        $_SESSION['id_pedido']=(int)$_GET['id_pedido'];
+        $_SESSION['id_pedido1']=(int)$_GET['id_pedido'];
+        $_SESSION['id_pedido2']=(int)$_GET['id_pedido'];
+        $_SESSION['id_pedido3']=(int)$_GET['id_pedido'];
+        $_SESSION['id_pedido4']=(int)$_GET['id_pedido'];
     else:
         foreach($this->Dados as $dados): 
             extract($dados);
@@ -13,6 +14,7 @@
             $_SESSION['id_pedido1'] = $id;
             $_SESSION['id_pedido2'] = $id;
             $_SESSION['id_pedido3'] = $id;
+            $_SESSION['id_pedido4']=$id;
             $_SESSION['status'] = $status;
         endforeach;
     endif;

@@ -1,3 +1,10 @@
+<script src="assets/js/jquery.mask.min.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $('#cpf').mask('000.000.000-00');
+           
+        })
+    </script>
 <div class="wrapper text-center">
 
         <h1>Login do Funcionário</h1>
@@ -28,10 +35,5 @@
                     </form>
                 </div>
             </div>
-                
-            
-                
-            
-            
-            
+    
     </div>
