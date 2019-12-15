@@ -25,7 +25,7 @@
                 atualiza();
             });
             function atualiza() {
-                $.get("core/acao_entrega.php",function (resultado) {
+                $.get("assets/js/acao_entrega.php",function (resultado) {
                     $('#notificacao').html(resultado);
                 });
                 setTimeout('atualiza()',5000);
@@ -42,5 +42,5 @@
 </div>
 
 <?php
-    require_once "core/acao_entrega.php";
+    require_once "assets/js/acao_entrega.php";
 ?>

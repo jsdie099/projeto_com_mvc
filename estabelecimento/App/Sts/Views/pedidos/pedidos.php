@@ -7,7 +7,7 @@
                 });
                 function atualiza() 
                 {
-                    $.get("Core/acao_funcionario.php",function (resultado) {
+                    $.get("assets/js/acao_funcionario.php",function (resultado) {
                     $('#notificacao').html(resultado);
                 });
                 setTimeout('atualiza()',5000);
@@ -16,7 +16,7 @@
         <h1 id="nenhum" style="display: none;">Nenhum pedido no momento!</h1>
     <h1 id="notificacao">
         <?php
-            require_once "Core/acao_funcionario.php";
+            require_once "assets/js/acao_funcionario.php";
         ?>
     </h1>
 </div>

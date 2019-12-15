@@ -28,7 +28,7 @@
             atualiza();
         });
         function atualiza() {
-            $.get("core/acao_retirada.php",function (resultado) {
+            $.get("assets/js/acao_retirada.php",function (resultado) {
                 $('#notificacao').html(resultado);
             });
             setTimeout('atualiza()',5000);
@@ -43,5 +43,5 @@
     <h2><a href="cardapio">Voltar para o cardápio</a></h2>
 </div>
 <?php
-    require_once "Core/acao_retirada.php";
+    require_once "assets/js/acao_retirada.php";
 ?>
